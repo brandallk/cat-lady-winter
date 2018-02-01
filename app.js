@@ -41,6 +41,7 @@ function draw(arr){
             <h3>Happiness:</h3>
             <p>${getHappiness(cat)}</p>
             <button onclick="petMe(${i})">Pet Me!</button>
+            <button onclick="resetPets(${i})">Reset</button>
         </div>
         `
     }
@@ -52,6 +53,11 @@ function petMe(index){
     var cat = cats[index]
     cat.pets++
     draw(cats)
+}
+
+function resetPets(index) {
+    cats[index].pets = 0;
+    draw(cats);
 }
 
 draw(cats)
